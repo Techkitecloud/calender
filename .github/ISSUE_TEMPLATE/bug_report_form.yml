@@ -1,6 +1,6 @@
 name: "Calendar Bug"
 description: "Have you encountered a bug?"
-labels: ["bug", "0. Needs triage"]
+labels: ["bug", "0. to triage"]
 body:
   - type: textarea
     id: reproduce
