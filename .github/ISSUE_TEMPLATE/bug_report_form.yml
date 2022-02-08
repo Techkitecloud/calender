@@ -1,0 +1,147 @@
+name: "Calendar Bug"
+description: "Have you encountered a bug?"
+labels: ["bug", "0. Needs triage"]
+body:
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: |
+        Describe the steps to reproduce the bug.
+        The better your description is _(go 'here', click 'there'...)_ the fastest you'll get an _(accurate)_ answer.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: Tell us what should happen
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behaviour
+      description: |
+        Tell us what happens instead
+    validations:
+      required: true
+  - type: textarea
+    id: calendar-app-version
+    attributes:
+      label: calendar app version
+      description: |
+        See apps admin page, e.g. 0.5.3
+  - type: input
+    id: CalDAV-clients-used
+    attributes:
+      label: CalDAV-clients used
+      description: |
+        e.g. Thunderbird Lightning, DAVx5, Evolution, macOS Calendar, etc...
+  - type: input
+    id: system
+    attributes:
+      label: Operating system
+      description: |
+        Write the operating system where Nextcloud Calendar app is installed.
+  - type: dropdown
+    id: php
+    attributes:
+      label: PHP engine version
+      description: |
+        Select PHP engine version serving Nextcloud Server.
+        _Describe in the "Additional info" section if you chose "Other"._
+      options:
+        - "PHP 7.3"
+        - "PHP 7.4"
+        - "PHP 8.0"
+        - "PHP 8.1"
+        - "Other"
+  - type: dropdown
+    id: webserver
+    attributes:
+      label: Web server
+      description: |
+        Select Webserver serving Nextcloud Server.
+        _Describe in the "Additional info" section if you chose "Other"._
+      options:
+        - "Apache (supported)"
+        - "Nginx"
+        - "Lighttpd"
+        - "Other"
+  - type: dropdown
+    id: database
+    attributes:
+      label: Database engine version
+      description: |
+        Select Database engine serving Nextcloud Server.
+        _Describe in the "Additional info" section if you chose "Other"._
+      options:
+        - "MySQL"
+        - "MariaDB"
+        - "PostgreSQL"
+        - "SQlite"
+        - "Oracle"
+        - "Other"
+  - type: input
+    id: fresh-install-update
+    attributes:
+      label: Updated from an older installed version or fresh install
+  - type: textarea
+    id: list-active-apps
+    attributes:
+      label: List of activated apps
+      description: |
+        Provide information about your configuration.
+        To get this information, execute one of the following commands on the CLI:
+        ```shell
+        If you have access to your command line run e.g.:
+        sudo -u www-data php occ app:list
+        from within your instance's installation folder
+        ```
+        > NOTE: This will be automatically formatted into code for better readability.
+      render: shell
+  - type: textarea
+    id: config
+    attributes:
+      label: Nextcloud configuration
+      description: |
+        Provide information about your configuration.
+        To get this information, execute one of the following commands on the CLI. Make sure to remove all sensitive content such as passwords. (e.g. database password, passwordsalt, secret, smtp password:
+        ```shell
+        If you have access to your command line run e.g.:
+        sudo -u www-data php occ config:list system
+        from within your instance's installation folder
+        ```
+        > NOTE: This will be automatically formatted into code for better readability.
+      render: shell
+  - type: textarea
+    id: log
+    attributes:
+      label: Web server error log
+      description: |
+        Insert your webserver log here
+  - type: textarea
+    id: log-file
+    attributes:
+      label: Log file
+      description: |
+        Insert your nextcloud.log file here
+  - type: textarea
+    id: browser-log
+    attributes:
+      label: Browser log
+      description: |
+        Insert your browser log here, this could for example include:
+        a) The javascript console log
+        b) The network log
+        c) ...
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional info
+      description: Any additional information related to the issue (ex. browser console errors, software versions).
