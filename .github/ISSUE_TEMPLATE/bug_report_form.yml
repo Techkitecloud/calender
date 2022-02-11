@@ -2,13 +2,25 @@ name: "Calendar Bug"
 description: "Have you encountered a bug?"
 labels: ["bug", "0. to triage"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 👍Thanks for reporting issues back to Nextcloud! 
+        This is the issue tracker of Nextcloud, if you have any support question please check out https://nextcloud.com/support
+        This is the bug tracker for the web-calendar component. Find other components at https://github.com/nextcloud/
+        Everything that is related to the CalDAV server, meaning it does not only affect the web-calendar but also your mobile and desktop clients, belongs in the Server repository: https://github.com/nextcloud/server
+        For reporting potential security issues please see https://nextcloud.com/security/
+        To make it possible for us to help you please fill out below information carefully. 
+        You can also use the Issue Template application to prefill most of the required information: https://apps.nextcloud.com/apps/issuetemplate
+        If you are a customer, please submit your issue directly in the Nextcloud Portal https://portal.nextcloud.com so it gets resolved more quickly by our dedicated engineers.
+        Note that Nextcloud is an open source project backed by Nextcloud GmbH. Most of our volunteers are home users and thus primarily care about issues that affect home users. Our paid engineers prioritize issues of our customers. If you are neither a home user nor a customer, consider paying somebody to fix your issue, do it yourself or become a customer.
   - type: textarea
     id: reproduce
     attributes:
       label: Steps to reproduce
       description: |
         Describe the steps to reproduce the bug.
-        The better your description is _(go 'here', click 'there'...)_ the fastest you'll get an _(accurate)_ answer.
+        The better your description is _(go 'here', click 'there'…)_ the fastest you'll get an _(accurate)_ answer.
       value: |
         1.
         2.
@@ -33,9 +45,9 @@ body:
   - type: textarea
     id: calendar-app-version
     attributes:
-      label: calendar app version
+      label: Calendar app version
       description: |
-        See apps admin page, e.g. 0.5.3
+        See apps admin page, e.g. 3.5.3
   - type: input
     id: CalDAV-clients-used
     attributes:
@@ -87,10 +99,13 @@ body:
         - "SQlite"
         - "Oracle"
         - "Other"
-  - type: input
+  - type: dropdown
     id: fresh-install-update
     attributes:
       label: Updated from an older installed version or fresh install
+      options:
+        - "Older installed version"
+        - "Fresh install version"
   - type: textarea
     id: list-active-apps
     attributes:
